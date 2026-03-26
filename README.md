@@ -3,7 +3,7 @@
 
 ---
 
-# Business purpose
+# 1. Business purpose
 ## Project background
 다인원이 함께하는 여행에서 교통비, 식비, 숙박비 등을 여러 사람이 번갈아 가며 결제하게 되면 각 지출마다 참여 인원이 다를 수 있으며 비용 분담 구조가 복잡해진다. 
 
@@ -21,7 +21,7 @@
 
 ---
 
-# System context diagram
+# 2. System context diagram
 ![image](https://github.com/user-attachments/assets/c9e7dfde-276c-4f5c-a4e6-617e8b43b379)
 - Sign up: 회원가입
 - Login: 로그인
@@ -46,8 +46,11 @@
 - Return Notification Status: 알림 전송 결과 반환
 
 ---
-# Use-case and Concept of operation
+
+# 3. Use-case and Concept of operation
 ## 1) Sign up
+사용자가 회원가입을 한다.
+
 | 항목 | 내용 |
 |------|------------|
 | Actor | User |
@@ -147,12 +150,24 @@
 |------|------------|
 | Actor | User |
 | Purpose | 정산 계산 수행 |
-| Approach | 사용자가 정산을 요청하면 시스템은 지출 데이터로 정산 금액을 계산 |
+| Approach | 사용자가 경비 정산을 요청하면 시스템이 정산에 필요한 지출 데이터를 준비 |
 | Dynamics | 정산 요청 이벤트 발생 |
-| Goals | 정산 로직 구현 |
+| Goals | 제공할 정산 데이터 수집 구현 |
 
 
-## 10) View Settlement Results
+## 10) Calculate Settlement 
+시스템이 각 참여자의 분담 금액 및 총 지출액을 비교하여 최종 정산 금액을 계산한다.
+
+| 항목 | 내용 |
+|------|------------|
+| Actor | System |
+| Purpose | 참여자별 정산 계산 수행 |
+| Approach | 시스템이 그룹 내 지출 데이터를 조회하여 각 참여자의 분담 금액과 총 지출액을 비교하여 최종 송금 및 수령 금액을 계산 |
+| Dynamics | 정산 계산 수행 |
+| Goals | 정확한 정산 로직 구현 |
+
+
+## 11) View Settlement Results
 사용자가 정산 결과를 확인한다.
 
 | 항목 | 내용 |
@@ -164,15 +179,17 @@
 | Goals | 정산 결과 제공 기능 구현 |
 
 
-## 11) Return Notification Status
+## 12) Return Notification Status
 사용자가 주요 이벤트에 대한 알림을 받는다.
 
 | 항목 | 내용 |
 |------|------------|
 | Actor | User |
 | Purpose | 주요 이벤트 알림 제공 |
-| Approach | 그룹 초대, 지출 변경, 정산 완료 시 Notification Service를 통해 알림 |
+| Approach | 그룹 초대, 지출 금액 변경, 정산 완료 시 Notification Service를 통해 알림 |
 | Dynamics | 이벤트 발생 시 알림 전송 |
 | Goals | 알림 기능 구현 |
 
+---
 
+# 4. Problem statment
