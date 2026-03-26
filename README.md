@@ -1,6 +1,8 @@
 # Trabill
 다인원 여행 경비 관리 서비스
 
+===
+
 # Business purpose
 ## Project background
 다인원이 함께하는 여행에서 교통비, 식비, 숙박비 등을 여러 사람이 번갈아 가며 결제하게 되면 각 지출마다 참여 인원이 다를 수 있으며 비용 분담 구조가 복잡해진다. 
@@ -17,6 +19,7 @@
 ## Target Market
 2인 이상으로 국내여행을 떠나는 사람들을 주 대상자로 한다.
 
+===
 
 # System context diagram
 ![image](https://github.com/user-attachments/assets/c9e7dfde-276c-4f5c-a4e6-617e8b43b379)
@@ -41,6 +44,8 @@
 - Send Expense Update Notifications: 지출 업데이트 알림 전송
 - Send Settlement Completion Notifications: 정산 완료 알림 전송
 - Return Notification Status: 알림 전송 결과 반환
+
+===
 
 ## 1) Sign up
 | 항목 | 내용 |
