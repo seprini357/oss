@@ -152,7 +152,7 @@
 | Purpose | 정산 계산 수행 |
 | Approach | 사용자가 경비 정산을 요청하면 시스템이 정산에 필요한 지출 데이터를 준비 |
 | Dynamics | 정산 요청 이벤트 발생 |
-| Goals | 제공할 정산 데이터 수집 구현 |
+| Goals | 제공할 정산 데이터 수집 |
 
 
 ## 10) Calculate Settlement 
@@ -193,3 +193,32 @@
 ---
 
 # 4. Problem statment
+## Technical Difficulties
+- 복잡한 여행 경비 정산 로직
+  - 사용자 별 지출 금액 및 분담 비율 등 여러 조건을 만족하며 최종 송금 및 수령 금액을 계산하는 알고리즘은 복잡하다.
+- 데이터 일관성 유지
+  - 여러 사용자가 동시에 지출을 등록, 수정, 삭제하여 race condition의 문제가 발생할 수 있다.
+- 외부 API 연동
+   알림 기능 구현으로 외부 API를 연동하여 외부 API 호출 실패를 고려하여 예외 처리가 필요하다.
+## Non-Fuctional Requirements(NFRs)
+- 정산 계산 결과는 요청 후 2초 이내에 제공되어야한다.
+- DB 접근 후 데이터 조회 결과는 3초 이내에 화면에 표시되어야한다.
+- 개인 정보와 금융 데이터는 안전하게 보호되어야한다.
+- 직관적인 UI를 사용하여 모든 사용자가 사용할 수 있도록 한다.
+
+---
+
+# 5. Glossary
+| 용어 | 내용 |
+|------|------------|
+| Trabill | 다인원 여행 경비를 관리할 수 있는 서비스를 제공하는 앱 |
+| Query | 데이터베이스에서 원하는 정보를 검색하기 위해 요청에 쓰이는 컴퓨터 언어 |
+| Algorithm / 알고리즘 | 문제 풀이에 필요한 계산 절차 또는 처리 과정의 순서 |
+| race condition |  공유 자원에 대해 여러 개의 프로세스가 동시에 접근을 시도할 때 접근의 타이밍이나 순서 등이 결과값에 영향을 줄 수 있는 상태 |
+| Notification Service | 사용자에게 중요한 정보를 실시간으로 전달하는 시스템 |
+
+---
+
+# 6. References
+- FCM(Firebase Cloud Messaging)
+https://firebase.google.com/docs/cloud-messaging?hl=ko
