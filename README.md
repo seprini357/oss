@@ -1,5 +1,5 @@
 # 💰 Trabill
-다인원 여행 경비 지출 관리 어플리케이션
+다인원 여행 경비 지출 관리 앱
 ![image](https://github.com/user-attachments/assets/d613cc5c-2c76-4154-93d8-1b78570d1342)
 
 ---
