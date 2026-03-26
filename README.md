@@ -42,4 +42,11 @@
 - Send Settlement Completion Notifications: 정산 완료 알림 전송
 - Return Notification Status: 알림 전송 결과 반환
 
+## 1) Login
 
+| Item | Description |
+|------|------------|
+| Purpose | 앱 사용을 위해 등록된 사용자인지 확인 |
+| Approach | 사용자가 앱 실행 후 ID와 PW를 입력하면, 시스템은 DB에서 사용자 정보를 조회하여 로그인 성공 여부를 판단한다. |
+| Dynamics | 앱 실행 → 로그인 시도 |
+| Goals | 사용자 인증 기능 구현 |
